@@ -1,0 +1,26 @@
+@import "../shared.scss";
+
+:host {
+  section.play {
+    border-top: solid black 1px;
+
+    label {
+      border: solid black 1px;
+      width: $W;
+      height: $W;
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+      margin-right: 1em;
+      user-select: none;
+    }
+
+    label:hover {
+      background-color: $over-color;
+    }
+
+    label.selected {
+      background-color: $selected-color;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../shared.scss";
+$B: solid black 3px;
+$OutB: solid black 6px;
+
+:host {
+  table {
+    border-collapse: collapse;
+    border: $OutB;
+    user-select: none;
+
+    td {
+      border: solid black 1px;
+      width: $W;
+      height: $W;
+      text-align: center;
+      font-size: x-large;
+    }
+
+    td.internalBorder {
+      border-left: $B;
+    }
+
+    tr.internalBorder {
+      border-top: $B;
+    }
+
+    td:hover {
+      background-color: $over-color;
+    }
+
+    td.isInitial {
+      background-color: $initial-value;
+    }
+
+    td.isSelected {
+      background-color: $selected-color;
+    }
+  }
+}

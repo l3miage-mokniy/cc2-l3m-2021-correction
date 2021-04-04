@@ -1,0 +1,17 @@
+<section *ngIf="obs | async as data">
+  <section>
+    <button (click)="newGame()">Nouveau plateau</button>
+  </section>
+
+  <app-sudoku [board]="data.board" [caseSelected]="data.selectedCase" (selection)="select($event)"></app-sudoku>
+
+  <hr />
+  <section class="play">
+    <label *ngFor="let v of data.Lplayable"
+          [class.selected] = "v === data.selectedCase.value"
+          (click) = "play(v)"
+    >
+      {{v > 0 ? v : ''}}
+    </label>
+  </section>
+</section>

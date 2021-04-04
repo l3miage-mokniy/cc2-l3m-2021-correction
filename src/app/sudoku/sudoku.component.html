@@ -1,0 +1,11 @@
+<table>
+  <tbody>
+    <tr *ngFor="let L of board.lines; index as i; trackBy: trackByIndex" [class.internalBorder]="isBorder(i)">
+      <td *ngFor="let c of L; index as j; trackBy: trackByIndex" [class.isInitial]="board.isInitial[i][j]"
+        [class.internalBorder]="isBorder(j)" [class.isSelected]="i === caseSelected.x && j === caseSelected.y"
+        (click)="setCaseSelected( {x: i, y: j, value: c} )">
+        {{ c !== 0 ? c : ''}}
+      </td>
+    </tr>
+  </tbody>
+</table>
